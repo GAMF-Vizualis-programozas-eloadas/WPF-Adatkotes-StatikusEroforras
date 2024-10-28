@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="WPF_Adatkotes_StatikusEroforras.Hallgató">
+    <Position X="7" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAACAAAAAAgAAAAAAAAAAQAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Hallgato.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
