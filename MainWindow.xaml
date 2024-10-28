@@ -1,0 +1,44 @@
+﻿<Window x:Class="WPF_Adatkotes_StatikusEroforras.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Adatkotes_StatikusEroforras"
+        mc:Ignorable="d"
+        Title="Adatkötés statikus erőforráshoz" Height="250" Width="600">
+	<Window.Resources>
+		<!-- Pédányosítjuk a Hallgató osztályt -->
+		<!-- Egy x:Kulcs-ot megadva erőforrásként használhatjuk -->
+		<local:Hallgató x:Key="Adatforrás" />
+	</Window.Resources>
+	<!-- Megnevezzük az adatforrást. Mivel a Grid elemben adjuk meg, minden tartalmazott elem használhatja -->
+	<Grid Name="grRács"  
+       DataContext="{Binding Source={StaticResource Adatforrás}}" VerticalAlignment="Center" Margin="5">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150" />
+			<ColumnDefinition MinWidth="150"  />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+		</Grid.RowDefinitions>
+		<TextBlock Grid.Row="0" Grid.Column="0">Vezetéknév</TextBlock>
+		<TextBlock Text="{Binding Path=Vezetéknév}" Name="tbVezetéknév" Grid.Row="0" Grid.Column="1" />
+		<TextBlock Grid.Row="1" Grid.Column="0">Keresztnév</TextBlock>
+		<TextBlock Text="{Binding Path=Keresztnév}" Name="tbKeresztnév"  
+              Grid.Row="1" Grid.Column="1"  />
+		<TextBlock Grid.Row="2" Grid.Column="0">Neptun</TextBlock>
+		<TextBlock Text="{Binding Path=Neptun}" Name="tbNeptun" 
+              Grid.Row="2" Grid.Column="1" />
+		<TextBlock Grid.Row="3" Grid.Column="0">e-mail</TextBlock>
+		<TextBlock Text="{Binding Path=email}" Name="tbemail" 
+              Grid.Row="3" Grid.Column="1" />
+		<TextBlock Grid.Row="4" Grid.Column="0">Göngyölített átlag</TextBlock>
+		<TextBlock Text="{Binding Path=GöngyölítettÁtlag}" 
+              Name="tbGöngyölítettÁtlag" Grid.Row="4" 
+              Grid.Column="1" />
+	</Grid>
+</Window>
